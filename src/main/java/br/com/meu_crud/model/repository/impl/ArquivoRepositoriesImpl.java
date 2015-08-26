@@ -30,17 +30,20 @@ public class ArquivoRepositoriesImpl extends
 				entityManager.getMetamodel()), entityManager);
 	}
 
+	@Override
 	public Arquivo buscarUltimoArquivo() {
 		return createQuery().orderBy(qArquivo.dataRegistro.desc())
 				.singleResult(qArquivo);
 	}
 
+	@Override
 	public List<Arquivo> buscar(Map<String, Object> params) {
 		BooleanBuilder predicate = new BooleanBuilder();
 		predicate.and(qArquivo.nome.eq(params.get("nome").toString()));
 		return createQuery(predicate).listDistinct(qArquivo);
 	}
 
+	@Override
 	public List<Arquivo> autocompletar(String valor) {
 		return null;
 	}

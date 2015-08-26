@@ -18,7 +18,8 @@ import javax.persistence.UniqueConstraint;
 import br.com.meu_crud.model.enums.TipoDocEnum;
 
 @Entity
-@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "titulo, descricao, tamanho" }) })
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "titulo",
+		"descricao", "tamanho" }) })
 public class Documento {
 
 	@Id

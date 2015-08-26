@@ -30,6 +30,7 @@ public class DocumentoRepositoriesImpl extends
 				Documento.class, entityManager.getMetamodel()), entityManager);
 	}
 
+	@Override
 	public List<Documento> buscar(Map<String, Object> params) {
 		BooleanBuilder predicate = new BooleanBuilder();
 		if (params.containsKey("titulo"))
@@ -38,6 +39,7 @@ public class DocumentoRepositoriesImpl extends
 		return createQuery(predicate).listDistinct(qDocumento);
 	}
 
+	@Override
 	public List<Documento> autocompletar(String valor) {
 		BooleanBuilder predicate = new BooleanBuilder();
 		if (valor != null)
