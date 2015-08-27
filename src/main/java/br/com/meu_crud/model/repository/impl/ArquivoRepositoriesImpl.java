@@ -39,7 +39,10 @@ public class ArquivoRepositoriesImpl extends
 	@Override
 	public List<Arquivo> buscar(Map<String, Object> params) {
 		BooleanBuilder predicate = new BooleanBuilder();
-		predicate.and(qArquivo.nome.eq(params.get("nome").toString()));
+		if (params.containsKey("nome"))
+			predicate.and(qArquivo.nome.eq(params.get("nome").toString()));
+		predicate.and(qArquivo.ativo.eq(Boolean.parseBoolean(params
+				.get("ativo").toString())));
 		return createQuery(predicate).listDistinct(qArquivo);
 	}
 
