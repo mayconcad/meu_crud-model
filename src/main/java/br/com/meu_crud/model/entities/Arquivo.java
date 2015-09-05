@@ -1,4 +1,4 @@
-package br.com.meu_crud.meu_crud_model.entities;
+package br.com.meu_crud.model.entities;
 
 import java.util.Date;
 import java.util.List;

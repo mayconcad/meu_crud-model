@@ -1,4 +1,4 @@
-package br.com.meu_crud.meu_crud_model.entities;
+package br.com.meu_crud.model.entities;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -15,7 +15,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 
-import br.com.meu_crud.meu_crud_model.enums.TipoDocEnum;
+import br.com.meu_crud.model.enums.TipoDocEnum;
 
 @Entity
 @Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "titulo, descricao, tamanho" }) })

@@ -1,4 +1,4 @@
-package br.com.meu_crud.meu_crud_model.enums;
+package br.com.meu_crud.model.enums;
 
 public enum TipoDocEnum {
 
