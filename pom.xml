@@ -354,7 +354,6 @@
 							</processors>
 							<showWarnings>true</showWarnings>
 						</configuration>
-						<!-- project.build.directory -->
 					</execution>
 				</executions>
 			</plugin>
