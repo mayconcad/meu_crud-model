@@ -18,7 +18,7 @@ import br.com.meu_crud.model.repository.interfaces.ArquivoRepositorio;
 import com.mysema.query.BooleanBuilder;
 
 @Repository
-@Transactional
+@Transactional(readOnly = true)
 public class ArquivoRepositoriesImpl extends
 		QueryDslJpaRepository<Arquivo, Long> implements ArquivoRepositorio {
 
@@ -38,8 +38,7 @@ public class ArquivoRepositoriesImpl extends
 	public List<Arquivo> buscar(Map<String, Object> params) {
 		BooleanBuilder predicate = new BooleanBuilder();
 		predicate.and(qArquivo.nome.eq(params.get("nome").toString()));
-		return createQuery(predicate).orderBy(qArquivo.dataRegistro.desc())
-				.listDistinct(qArquivo);
+		return createQuery(predicate).listDistinct(qArquivo);
 	}
 
 	public List<Arquivo> autocompletar(String valor) {
